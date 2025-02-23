@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise untuk Kamu</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            transition: background-color 1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+
+
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Halo Sayang ❤️</h1>
+    <p>Klik tombol di bawah ini untuk melihat sesuatu yang spesial!</p>
+    <button onclick="showSurprise()">Klik Aku</button>
+    
+    <div id="surprise" class="hidden">
+        <h2 class="heart">💖 Aku sayang kamu! 💖</h2>
+        <p>Kamu adalah orang paling spesial dalam hidupku! 😘</p>
+        <audio id="loveSong" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" preload="auto"></audio>
+        <button onclick="playMusic()">Putar Musik Romantis</button>
+    </div>
+    
+    <script>
+        function showSurprise() {
+            document.getElementById('surprise').classList.remove('hidden');
+            document.body.style.backgroundColor = '#ffcccc';
+        }
+
+        function playMusic() {
+            document.getElementById('loveSong').play();
+        }
+    </script>
+</body>
+</html>
